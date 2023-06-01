@@ -1,0 +1,24 @@
+﻿@model CRUD1.Models.ModelProducto
+
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Eliminar Producto
+    </div>
+    <div class="card-body">
+            <div class="alert alert-danger" role="alert">
+                ¿Desea eliminar el Producto "@Html.DisplayFor(model => model.productoID)"?
+            </div>
+        <form asp-action="Eliminar" asp-controller="Producto" method="post">
+            <input asp-for="productoID" type="hidden" class="form-control" />
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            
+            <a asp-action="Listar" asp-controller="Producto" class="btn btn-warning">Volver al listado</a>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,38 @@
+﻿@model CRUD1.Models.ModelUsuarios
+
+@{
+    ViewData["Title"] = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Nuevo Usuario
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="mb-3">
+                <label for="email" class="form-label">email</label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="contraseña" class="form-label">Contraseña</label>
+                <input asp-for="contraseña" class="form-control" />
+                <span asp-validation-for="contraseña" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+
+            <a asp-action="Listar" asp-controller="Usuarios" class="btn btn-warning">Volver al listado</a>
+
+        </form>
+
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

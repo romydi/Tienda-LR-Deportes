@@ -1,0 +1,24 @@
+﻿@model CRUD1.Models.ModelClientes
+
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+      Eliminar Clientes
+    </div>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="Clientes" method="post">
+        <input asp-for="clientes_ID" type="hidden" class="form-control" />
+       
+            <div class="alert alert-danger" role="alert">
+                ¿Desea eliminar el Cliente "@Html.DisplayFor(model => model.nombre_clie)"?
+            </div>
+
+             <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-action="Listar" asp-controller="Clientes" class="btn btn-warning">Volver al listado</a>
+        </form>
+    </div>
+</div>

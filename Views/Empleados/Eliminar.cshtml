@@ -1,0 +1,25 @@
+﻿@model CRUD1.Models.ModelEmpleados
+
+@{
+    ViewData["Title"] = "Eliminar Empleado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Eliminar Empleado
+    </div>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="Clientes" method="post">
+            <input asp-for="empleadosID" type="hidden" class="form-control" />
+
+            <div class="alert alert-danger" role="alert">
+                ¿Desea eliminar el Empleado "@Html.DisplayFor(model => model.nombre_emp)"?
+            </div>
+
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-action="Listar" asp-controller="Clientes" class="btn btn-warning">Volver al listado</a>
+        </form>
+    </div>
+</div>
+

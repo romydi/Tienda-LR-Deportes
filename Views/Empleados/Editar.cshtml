@@ -1,0 +1,50 @@
+﻿@model CRUD1.Models.ModelEmpleados
+
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Editar Empleado
+    </div>
+    <div class="card-body">
+
+        <form asp-action="Editar" asp-controller="Empleados" method="post">
+            <input asp-for="empleadosID" type="hidden" class="form-control" />
+
+            <div class="mb-3">
+                <label for="nombre_emp" class="form-label">Nombre</label>
+                <input asp-for="nombre_emp" class="form-control" />
+                <span asp-validation-for="nombre_emp" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="apellido_emp" class="form-label">Apellido</label>
+                <input asp-for="apellido_emp" class="form-control" />
+                <span asp-validation-for="apellido_emp" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="rol_area" class="form-label">Rol/Area</label>
+                <input asp-for="rol_area" class="form-control" />
+                <span asp-validation-for="rol_area" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="id_usuario" class="form-label">ID Usuario</label>
+                <input asp-for="id_usuario" class="form-control" />
+                <span asp-validation-for="id_usuario" class="text-danger"></span>
+            </div>
+          
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+
+            <a asp-action="Listar" asp-controller="Empleados" class="btn btn-success">Volver al listado</a>
+        </form>
+
+
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

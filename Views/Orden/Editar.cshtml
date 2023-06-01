@@ -1,0 +1,59 @@
+﻿@model CRUD1.Models.ModelOrden
+
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<div class="card">
+    <div class="card-header">
+        Editar Informacion Orden
+    </div>
+    <div class="card-body">
+
+        <form asp-action="Editar" asp-controller="Orden" method="post">
+            <input asp-for="productoID" type="hidden" class="form-control" />
+
+            <div class="mb-3">
+                <label for="productoID" class="form-label">ID Producto</label>
+                <input asp-for="productoID" class="form-control" />
+                <span asp-validation-for="productoID" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="clientes_ID" class="form-label">ID Cliente</label>
+                <input asp-for="clientes_ID" class="form-control" />
+                <span asp-validation-for="clientes_ID" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="fecha_generacion" class="form-label">Fecha de Generacion</label>
+                <input asp-for="fecha_generacion" class="form-control" />
+                <span asp-validation-for="fecha_generacion" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="fecha_entrega" class="form-label">Fecha de Entrega</label>
+                <input asp-for="fecha_entrega" class="form-control" />
+                <span asp-validation-for="fecha_entrega" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="empleadosID" class="form-label">ID Empleado</label>
+                <input asp-for="empleadosID" class="form-control" />
+                <span asp-validation-for="empleadosID" class="text-danger"></span>
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Guardar</button>
+
+            <a asp-action="Listar" asp-controller="Orden" class="btn btn-success">Volver al listado</a>
+        </form>
+
+
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

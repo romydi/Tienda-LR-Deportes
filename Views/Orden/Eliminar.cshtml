@@ -1,0 +1,24 @@
+﻿@model CRUD1.Models.ModelOrden
+
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Eliminar Orden
+    </div>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="Orden" method="post">
+            <input asp-for="ordenID" type="hidden" class="form-control" />
+
+            <div class="alert alert-danger" role="alert">
+                ¿Desea eliminar la Orden "@Html.DisplayNameFor(model => model.ordenID)"?
+            </div>
+
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-action="Listar" asp-controller="Orden" class="btn btn-warning">Volver al listado</a>
+        </form>
+    </div>
+</div>
